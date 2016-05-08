@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoLab": {
+    "host": "ds021671.mlab.com",
+    "port": 21671,
+    "database": "heroku_k0h7b96k",
+    "password": "123456",
+    "name": "mongoLab",
+    "user": "tebyt",
+    "connector": "mongodb"
+  }
+}
