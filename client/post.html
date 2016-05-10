@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1,width=device-width" />
+    <!--    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <style>
+        /*
+        .btn-default {
+            background: white;
+            color: #fff;
+        }
+        
+        .btn-default:click {
+            background: blue;
+            color: #000;
+        }
+*/
+        
+        body {
+            overflow: hidden
+        }
+        
+        h4 {
+            color: #FAC60C;
+        }
+        
+        #acti-send {
+            /*            float: right;*/
+            margin: 10px;
+            margin-top: 10px;
+            background-color: #007ba7;
+            color: #FFF;
+            width: 18%;
+        }
+        
+        #acti-cancel {
+            padding-top: 20px;
+            color: darkgray;
+        }
+        
+        .items-collection label.btn-default.active {
+            background-color: #007ba7;
+            color: #FFF;
+        }
+        
+        .items-collection1 label.btn-default {
+            width: 31%;
+            border: 1px solid #305891;
+            margin: 0;
+            padding-right: 0px;
+            border-radius: 17px;
+            color: #305891;
+        }
+        
+        .items-collection label .itemcontent {
+            width: 100%;
+        }
+        
+        .items-collection .btn-group {
+            width: 100%;
+            padding-left: 45px
+        }
+        
+        .items-collection2 label.btn-default {
+            width: 30%;
+            border: 1px solid #305891;
+            margin: 3px;
+            padding-left: 20px;
+            color: #305891;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <a href="#" class="col-xs-3 " id="acti-cancel">Cancel</a>
+            <center>
+                <h4 class="col-xs-6">Activity Publish</h4></center>
+            <button type="submit" id="acti-send" class="btn btn-default col-xs-2">
+                <center>Submit</center>
+            </button>
+
+        </div>
+
+        <!--        <form role="form">-->
+        <div class="form-group">
+            <textarea name="detail" id="detail" placeholder="anything new..." class="form-control" rows="9" required></textarea>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class="items-collection" id="message1">
+                    <div class="items-collection1">
+                        <!--                <div class="items">-->
+                        <!--                    <div class="info-block block-info clearfix">-->
+                        <div data-toggle="buttons" class="btn-group ">
+                            <label class="btn btn-default col-xs-2 col-sm-4 col-md-3 col-lg-3 " id="1">
+                                <div class="itemcontent">
+                                    <input type="radio" name="options" id="option1" autocomplete="off">
+                                    <span class="fa fa-usd"></span>
+                                </div>
+                            </label>
+
+                            <label class="btn btn-default col-xs-2 col-sm-4 col-md-3 col-lg-3" id="2">
+                                <div class="itemcontent">
+                                    <input type="radio" name="options" id="option2" autocomplete="off">
+                                    <span class="fa fa-usd"></span>
+                                    <span class="fa fa-usd"></span>
+                                </div>
+                            </label>
+
+                            <label class="btn btn-default col-xs-2 col-sm-4 col-md-3 col-lg-3" id="3">
+                                <div class="itemcontent">
+                                    <input type="radio" name="options" id="option3" autocomplete="off">
+                                    <span class="fa fa-usd"></span>
+                                    <span class="fa fa-usd"></span>
+                                    <span class="fa fa-usd"></span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="form-group">
+            <div class="items-collection" id="message2">
+                <div class="items-collection2">
+                    <!--                <div class="items">-->
+                    <!--                    <div class="info-block block-info clearfix">-->
+                    <div data-toggle="buttons" class="btn-group ">
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3 " id="Drink">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option1" autocomplete="off" value="Drink">
+                                <span class="glyphicon glyphicon-glass"></span>
+                                <br>Drink
+                            </div>
+                        </label>
+
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Fitness">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option2" autocomplete="off" value="Fitness">
+                                <span class="fa fa-futbol-o"></span>
+                                <br>Fitness
+                            </div>
+                        </label>
+
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Meal">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option3" autocomplete="off" value="Meal">
+                                <center><i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <br>Meal</center>
+                            </div>
+                        </label>
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Movie">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option4" autocomplete="off" value="Movie">
+                                <center><i class="fa fa-video-camera" aria-hidden="true"></i>
+                                    <br>Movie</center>
+                            </div>
+                        </label>
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Tour">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option5" autocomplete="off" value="Tour">
+                                <center><i class="fa fa-car" aria-hidden="true"></i>
+                                    <br>Tour</center>
+                            </div>
+                        </label>
+
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Mall">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option6" autocomplete="off">
+                                <center><i class="fa fa-credit-card" aria-hidden="true"></i>
+                                    <br>Mall</center>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!--    <div id="selecttest">result:</div>-->
+    </div>
+
+
+
+    <div id="myModal" class="modal fade">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- dialog body -->
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    Successful!
+                </div>
+                <!-- dialog buttons -->
+                <div class="modal-footer">
+                    <div class="row"><a id="test2" class="btn btn-default">cancel</a>
+                        <a id="ok" class="btn btn-primary">OK </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="warning" class="modal fade">
+        <div class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+            <strong>Warning!</strong> The field is not completed.
+        </div>
+    </div>
+
+</body>
+
+<script>
+    //$("input[name='options']").change(function(){
+    //    alert("test");
+    //});
+    //$('#acti-send').on('click', function () {
+    //
+    //     alert("test");
+    //
+    //})
+
+    //$('#acti-cancel').on('click', function()) {
+    ////        $.load('home.html');
+    //}
+    var message;
+    var formData;
+    var lat, lng;
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+            console.log("Latitude : " + lat + " Longitude : " + lng);
+        }
+    );
+
+    $('#acti-send').on("click", function () {
+        //        console.log("button pressed");
+        var part1 = $('#message1 label.active').attr('id');
+        var part2 = $('#message2 label.active').attr('id');
+        var part3 = $('textarea#detail').val();
+        sendData();
+
+
+        function sendData() {
+            formData = {
+                "description": part3
+                , "create_coordinates": {
+                    "lat": lat
+                    , "lng": lng
+                }
+                , "price": Number(part1)
+                , "type": part2
+            }
+            if (part1 == undefined || part2 == undefined || part3 == "")
+                $("#warning").modal('show');
+            else
+                $("#myModal").modal('show');
+        }
+
+    });
+
+
+    $("#test2").on("click", function () {
+        //        console.log("button1 pressed");
+        $("#myModal").modal('hide');
+    });
+
+    $("#ok").on("click", function () {
+        console.log(formData);
+
+        //        message = $('#message1 label.active').attr('id') + $('#message2 label.active').attr('id') + $('textarea#detail').val();
+        //        console.log(message);
+        //        console.log($('textarea#detail').val());
+
+        $.ajax({
+            url: "/api/activities"
+            , type: "POST"
+            , data: formData
+            , success: function (data, textStatus, jqXHR) {
+                //data - response from server
+                console.log('success');
+            }
+            , error: function (jqXHR, textStatus, errorThrown) {
+
+            }
+        });
+
+
+    });
+
+    $("#myModal").on("hide", function () {
+        $("#myModal a.btn").off("click");
+    });
+
+    $("#myModal").on("hidden", function () {
+        $("#myModal").remove();
+    });
+
+    $("#myModal").modal({
+        "backdrop": "static"
+        , "keyboard": true
+        , "show": false
+    , });
+
+    $("#warning").modal({
+        "backdrop": "static"
+        , "keyboard": true
+        , "show": false
+    , });
+    $("#warning").on("hidden", function () {
+        $("#warning").remove();
+    });
+    //    function getmessage() {
+    //        var message1 = $(".items-collection1 label.active input").val();
+    //        var message2 = $('.items-collection2 input:checked').val();
+    //        var message1 = $('.items-collection1 label.active input').val();
+    //        var message2 = $('.items-collection2 label.active input').val();
+    //        $("#selecttest").text("result: "+ message1);
+    //    }
+    // 
+    //    $("#message1 label.btn").on("click", getmessage(){
+    //                              console.log("button pressed");     
+    //                                });
+
+    $("#message1 label.btn").on("click", function () {
+        $("#selecttest").text("result:" + $(this).attr('id'));
+        //        message += $(this).attr('id');
+        //        console.log(message);
+    });
+
+    $("#message2 label.btn").on("click", function () {
+        $("#selecttest").text("result:" + $(this).attr('id'));
+        //      $('#message1 label.btn').click(function () {
+        //        console.log($(this).text());
+        //        console.log($(this).attr('id'));
+        //        $( "#selecttest" ).text( "result:" + $( ".items-collection1 input:checked" ).val());
+        //        console.log("button pressed");
+        //        message += $(this).attr('id');
+        //        console.log(message);
+    });
+</script>
+
+</html>
