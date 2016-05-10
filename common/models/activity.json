@@ -20,23 +20,34 @@
     "create_coordinates": {
       "type": "geopoint",
       "required": true
+    },
+    "price" : {
+      "type": "number",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
   "relations": {
-    "users": {
+    "participants": {
       "type": "hasAndBelongsToMany",
+      "model": "user"
+    },
+    "creater": {
+      "type": "belongsTo",
       "model": "user",
+      "foreignKey": "createrId"
+    },
+    "messages": {
+      "type": "hasMany",
+      "model": "message",
       "foreignKey": ""
     }
   },
   "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
     {
       "accessType": "READ",
       "principalType": "ROLE",
@@ -50,6 +61,13 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "create"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "findByCoordinates"
     }
   ],
   "methods": {}

@@ -84,13 +84,14 @@ for (var s in config) {
 }
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
-app.get('/', function (req, res, next) {
-  res.redirect('/auth/facebook');
-  // res.render('pages/index', {user:
-  //   req.user,
-  //   url: req.url
-  // });
-});
+// app.get('/', function (req, res, next) {
+//   res.redirect('/auth/facebook');
+//   // res.render('pages/index', {user:
+//   //   req.user,
+//   //   url: req.url
+//   // });
+// });
+
 
 app.get('/auth/account', ensureLoggedIn('/login'), function (req, res, next) {
   res.render('pages/loginProfiles', {
@@ -171,3 +172,4 @@ app.start = function() {
 if (require.main === module) {
   app.start();
 }
+

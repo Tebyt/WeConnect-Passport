@@ -20,7 +20,7 @@ module.exports = function(app) {
       if(err || !activity) {
         reject(err);
       } else {
-        activity.users.findById(userId, function (err, user) {
+        activity.participants.findById(userId, function (err, user) {
           cb(null, !!user);
         })
       }

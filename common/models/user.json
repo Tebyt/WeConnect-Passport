@@ -2,7 +2,14 @@
   "name": "user",
   "plural": "users",
   "base": "User",
-  "properties": {},
+  "properties": {
+    "nickname": {
+      "type": "string"
+    },
+    "avatar_url": {
+      "type": "string"
+    }
+  },
   "validations": [],
   "relations": {
     "accessTokens": {
