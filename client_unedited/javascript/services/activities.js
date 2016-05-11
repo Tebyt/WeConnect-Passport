@@ -3,6 +3,7 @@ app.factory('activities', ['$http', function ($http) {
 //    return new Promise(function (resolve, reject) {
         
 //    });
+    setTimeout(function(){}, 10000);
     var url = '/api/activities/findByCoordinates?lat=40.6249614&lng=-74.0017677';
     return $http.get(url).success(function(data) { 
         navigator.geolocation.getCurrentPosition(
