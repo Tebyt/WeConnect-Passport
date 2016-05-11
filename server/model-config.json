@@ -10,18 +10,6 @@
     "dataSource": "mongoLab",
     "public": true
   },
-  "accessToken": {
-    "dataSource": "mongoLab",
-    "public": false
-  },
-  "userCredential": {
-    "dataSource": "mongoLab",
-    "public": false
-  },
-  "userIdentity": {
-    "dataSource": "mongoLab",
-    "public": false
-  },
   "ACL": {
     "dataSource": "mongoLab",
     "public": false
@@ -41,5 +29,10 @@
   "message": {
     "dataSource": "mongoLab",
     "public": true
+  },
+  "AccessToken": {
+    "dataSource": "mongoLab",
+    "public": false,
+    "strict": true
   }
 }

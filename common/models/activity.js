@@ -1,7 +1,7 @@
 module.exports = function(Activity) {
     Activity.beforeRemote('create', function(context, activity, next) {
         context.args.data.create_date = Date.now();
-        context.args.data.createrId = context.req.accessToken.userId;
+        context.args.data.createrId = context.req.user.userId;
         next();
     })
     // Activity.beforeRemote('findByIdMessage', function(context, activity, next) {
@@ -11,7 +11,7 @@ module.exports = function(Activity) {
     // })
 
     Activity.afterRemote('create', function(context, activity, next) {
-        var userId = context.req.accessToken.userId;
+        var userId = context.req.user.userId;
         // var userId = '572e835ad3055492087911bf';
         activity.participants.add(userId);
 
@@ -36,7 +36,7 @@ module.exports = function(Activity) {
     })
     Activity.beforeRemote('prototype.__create__messages', function(context, activity, next) {
         context.args.data.create_date = Date.now();
-        context.args.data.userId = context.req.accessToken.userId;
+        context.args.data.userId = context.req.user.userId;
         next();
     })
 

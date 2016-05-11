@@ -21,7 +21,7 @@
       "type": "geopoint",
       "required": true
     },
-    "price" : {
+    "price": {
       "type": "number",
       "required": true
     },
@@ -48,6 +48,7 @@
     }
   },
   "acls": [
+
     {
       "accessType": "READ",
       "principalType": "ROLE",
