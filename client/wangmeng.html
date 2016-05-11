@@ -35,12 +35,41 @@
 
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-      
+    <div class="empty"></div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <p id="title">WeConnect</p>
+        <p id="title">WeConnect</p> <li><a href="#"  style="color: #FFF;"><p id="login">Login</p><span class="glyphicon glyphicon-log-in"></span></a></li>
     </nav>
+
+    <style>
+
+          .navbar-default {
+    background-color: #c7b938;
+    color: #FFF;
+}
     
-	<h1>WeConnect</h1>
+        .items-collection label .itemcontent {
+            width: 100%;
+        }
+        
+        .items-collection .btn-group {
+            width: 100%;
+            padding-left: 35px
+        }
+        
+        .items-collection2 label.btn-default {
+            width: 30%;
+            border: 0px solid #305891;
+            margin: 5px;
+            padding-left: 20px;
+/*            color: #305891;*/
+            color: #7f8778
+        }
+        #bottom {
+            background-color: #FFF;
+            border-top: 1px solid #c7b938;
+        }
+    </style>
+
       
       
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
@@ -56,7 +85,65 @@
             </div>
         </div>
     </div>
-    </nav>
+    </nav> 
+      <div class="row">
+        <div class="form-group" id="choice">
+            <div class="items-collection" id="message2">
+                <div class="items-collection2">
+                    <!--                <div class="items">-->
+                    <!--                    <div class="info-block block-info clearfix">-->
+                    <div data-toggle="buttons" class="btn-group ">
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3 " id="Drink">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option1" autocomplete="off" value="Drink">
+                                <span class="fa fa-glass fa-2x"></span>
+                                <br>Drink
+                            </div>
+                        </label>
+
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Fitness">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option2" autocomplete="off" value="Fitness">
+                                <span class="fa fa-futbol-o fa-2x"></span>
+                                <br>Fitness
+                            </div>
+                        </label>
+
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Meal">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option3" autocomplete="off" value="Meal">
+                                <center><i class="fa fa-cutlery fa-2x" aria-hidden="true"></i>
+                                    <br>Meal</center>
+                            </div>
+                        </label>
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Movie">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option4" autocomplete="off" value="Movie">
+                                <center><i class="fa fa-video-camera fa-2x" aria-hidden="true"></i>
+                                    <br>Movie</center>
+                            </div>
+                        </label>
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Tour">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option5" autocomplete="off" value="Tour">
+                                <center><i class="fa fa-car fa-2x" aria-hidden="true"></i>
+                                    <br>Tour</center>
+                            </div>
+                        </label>
+
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Mall">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option6" autocomplete="off">
+                                <center><i class="fa fa-credit-card fa-2x" aria-hidden="true"></i>
+                                    <br>Mall</center>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
       <div class="empty"></div>
     <div class="main" ng-controller="HomeController">
         <div class="container">

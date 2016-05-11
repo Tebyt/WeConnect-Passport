@@ -21,12 +21,12 @@ app.factory('activitiesFactory', function($http, $timeout, $q) {
     var url;
     updateCoordinate(function(object) {
         url = '/api/activities/findByCoordinates?lat=' + object.lat + '&lng=' + object.long;
-        console.log(url);
+        //url = '/activities.json'
         var activities = $http.get(url).success(function(response) {
-            return response.activities;
+            d.resolve(response.activities);
+            //return response.activities;
         });
-
-        d.resolve(activities);
+//      d.resolve(activities);
     })
      // just for test
      //  $timeout(function(){
@@ -37,5 +37,6 @@ app.factory('activitiesFactory', function($http, $timeout, $q) {
   }
   
   results.all = _all;
+  console.log(results);
   return results;
 });
