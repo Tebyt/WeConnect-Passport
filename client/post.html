@@ -85,7 +85,7 @@
     <div class="container">
 
         <div class="row">
-            <a href="#" class="col-xs-3 " id="acti-cancel">Cancel</a>
+            <a href="/index.html" class="col-xs-3 " id="acti-cancel">Cancel</a>
             <center>
                 <h4 class="col-xs-6">Activity Publish</h4></center>
             <button type="submit" id="acti-send" class="btn btn-default col-xs-2">
@@ -226,6 +226,13 @@
         </div>
     </div>
 
+    <div id="success" class="modal fade">
+        <div class="alert alert-info fade in">
+            <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+            <strong>Success!</strong>
+        </div>
+    </div>
+
 </body>
 
 <script>
@@ -259,7 +266,6 @@
         var part3 = $('textarea#detail').val();
         sendData();
 
-
         function sendData() {
             formData = {
                 "description": part3
@@ -273,7 +279,25 @@
             if (part1 == undefined || part2 == undefined || part3 == "")
                 $("#warning").modal('show');
             else
-                $("#myModal").modal('show');
+                $.ajax({
+                    url: "/api/activities"
+                    , type: "POST"
+                    , data: formData
+                    , success: function (data, textStatus, jqXHR) {
+                        //data - response from server
+                        $("#success").modal('show');
+                        console.log('success');
+                        setTimeout(
+                            function () {
+                                //do something special
+                                 window.location.replace("http://stackoverflow.com");
+                            }, 1200);
+                       
+                    }
+                    , error: function (jqXHR, textStatus, errorThrown) {
+
+                    }
+                });
         }
 
     });
@@ -284,28 +308,29 @@
         $("#myModal").modal('hide');
     });
 
-    $("#ok").on("click", function () {
-        console.log(formData);
-
-        //        message = $('#message1 label.active').attr('id') + $('#message2 label.active').attr('id') + $('textarea#detail').val();
-        //        console.log(message);
-        //        console.log($('textarea#detail').val());
-
-        $.ajax({
-            url: "/api/activities"
-            , type: "POST"
-            , data: formData
-            , success: function (data, textStatus, jqXHR) {
-                //data - response from server
-                console.log('success');
-            }
-            , error: function (jqXHR, textStatus, errorThrown) {
-
-            }
-        });
-
-
-    });
+    //    $("#ok").on("click", function () {
+    //        console.log(formData);
+    //
+    //        //        message = $('#message1 label.active').attr('id') + $('#message2 label.active').attr('id') + $('textarea#detail').val();
+    //        //        console.log(message);
+    //        //        console.log($('textarea#detail').val());
+    //
+    //        $.ajax({
+    //            url: "/api/activities"
+    //            , type: "POST"
+    //            , data: formData
+    //            , success: function (data, textStatus, jqXHR) {
+    //                //data - response from server
+    //                 $("#success").modal('show');
+    //                console.log('success');
+    //            }
+    //            , error: function (jqXHR, textStatus, errorThrown) {
+    //
+    //            }
+    //        });
+    //
+    //
+    //    });
 
     $("#myModal").on("hide", function () {
         $("#myModal a.btn").off("click");
@@ -326,20 +351,19 @@
         , "keyboard": true
         , "show": false
     , });
+
     $("#warning").on("hidden", function () {
         $("#warning").remove();
     });
-    //    function getmessage() {
-    //        var message1 = $(".items-collection1 label.active input").val();
-    //        var message2 = $('.items-collection2 input:checked').val();
-    //        var message1 = $('.items-collection1 label.active input').val();
-    //        var message2 = $('.items-collection2 label.active input').val();
-    //        $("#selecttest").text("result: "+ message1);
-    //    }
-    // 
-    //    $("#message1 label.btn").on("click", getmessage(){
-    //                              console.log("button pressed");     
-    //                                });
+
+    $("#success").modal({
+        "backdrop": "static"
+        , "keyboard": true
+        , "show": false
+    , });
+    $("success").on("hidden", function () {
+        $("#warning").remove();
+    });
 
     $("#message1 label.btn").on("click", function () {
         $("#selecttest").text("result:" + $(this).attr('id'));
@@ -357,6 +381,15 @@
         //        message += $(this).attr('id');
         //        console.log(message);
     });
+    
+    $(document).click(function(e) {
+    var target = e.target;
+
+    if (!$(target).is('#warning') ) {
+        $("#warning").modal('hide');
+    }
+});
+    
 </script>
 
 </html>

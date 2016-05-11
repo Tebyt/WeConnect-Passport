@@ -1,0 +1,152 @@
+<html>
+
+<head>
+    <title>Bootstrap Theme Simply Me</title>
+        <meta charset="utf-8">
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1,width=device-width" />
+    <!--    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <style>
+
+          .navbar-default {
+    background-color: #c7b938;
+    color: #FFF;
+}
+    
+        .items-collection label .itemcontent {
+            width: 100%;
+        }
+        
+        .items-collection .btn-group {
+            width: 100%;
+            padding-left: 35px
+        }
+        
+        .items-collection2 label.btn-default {
+            width: 30%;
+            border: 0px solid #305891;
+            margin: 5px;
+            padding-left: 20px;
+/*            color: #305891;*/
+            color: #7f8778
+        }
+        #bottom {
+            background-color: #FFF;
+            border-top: 1px solid #c7b938;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header  col-xs-10 ">
+
+                    <!--
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+-->
+                    <a class="navbar-brand" href="#">
+                       <strong style="color: #FFF;">Weconnect</strong>
+                    </a>
+                </div>
+                <div class="nav navbar-nav navbar-right ">
+
+                    <li><a href="#"  style="color: #FFF;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+        <div class="row">
+        <div class="form-group" id="choice">
+            <div class="items-collection" id="message2">
+                <div class="items-collection2">
+                    <!--                <div class="items">-->
+                    <!--                    <div class="info-block block-info clearfix">-->
+                    <div data-toggle="buttons" class="btn-group ">
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3 " id="Drink">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option1" autocomplete="off" value="Drink">
+                                <span class="fa fa-glass fa-2x"></span>
+                                <br>Drink
+                            </div>
+                        </label>
+
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Fitness">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option2" autocomplete="off" value="Fitness">
+                                <span class="fa fa-futbol-o fa-2x"></span>
+                                <br>Fitness
+                            </div>
+                        </label>
+
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Meal">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option3" autocomplete="off" value="Meal">
+                                <center><i class="fa fa-cutlery fa-2x" aria-hidden="true"></i>
+                                    <br>Meal</center>
+                            </div>
+                        </label>
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Movie">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option4" autocomplete="off" value="Movie">
+                                <center><i class="fa fa-video-camera fa-2x" aria-hidden="true"></i>
+                                    <br>Movie</center>
+                            </div>
+                        </label>
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Tour">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option5" autocomplete="off" value="Tour">
+                                <center><i class="fa fa-car fa-2x" aria-hidden="true"></i>
+                                    <br>Tour</center>
+                            </div>
+                        </label>
+
+                        <label class="btn btn-default col-xs-2 col-sm-2 col-md-3 col-lg-3" id="Mall">
+                            <div class="itemcontent">
+                                <input type="radio" name="options" id="option6" autocomplete="off">
+                                <center><i class="fa fa-credit-card fa-2x" aria-hidden="true"></i>
+                                    <br>Mall</center>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <nav class="navbar navbar-inverse navbar-fixed-bottom" id="bottom">
+        <div class="container-fluid">
+        <div class="row "class="navbar-header">
+            <div class="col-xs-3 col-xs-offset-1"><center><a class="navbar-brand" href="#"><i class="fa fa-home  text-primary" aria-hidden="true"></i></a></center>
+            </div>
+            <div class="col-xs-3 text-center"><center><a class="navbar-brand" href="#"><i class="fa fa-commenting-o  text-primary" aria-hidden="true"></i></a></center>
+            </div>
+            <div class="col-xs-3"><center><a class="navbar-brand" href="#"><i class="fa fa-plus  text-primary" aria-hidden="true"></i></a></center>
+            </div>
+            <div class="col-xs-2"><center><a class="navbar-brand" href="#"><i class="fa fa-users  text-primary" aria-hidden="true"></i></a></center>
+            </div>
+        </div>
+    </div>
+    </nav>
+</div>
+</body>
+
+
+
+
+</html>
