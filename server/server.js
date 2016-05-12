@@ -4,41 +4,42 @@ var boot = require('loopback-boot');
 var app = module.exports = loopback();
 
 var passport = require('passport');
-var Strategy = require('passport-facebook').Strategy;
+var Strategy = require('passport-local').Strategy;
 
 app.use(loopback.token({model: app.models.accessToken}));
 
-passport.use(new Strategy({
-      clientID: '1672424163009212',
-      clientSecret: 'ded402cf08aa3e899ea573311a0e6c69',
-      callbackURL: '/login/facebook/return',
-      profileFields: ['id', 'emails', 'name']
-    },
-    function(accessToken, refreshToken, profile, cb) {
-      // console.log(profile);
-        var User = app.models.user;
-        User.find({"email": profile.emails[0].value}, function (err, res) {
-        if (err) {
-            return cb(null, err);
-        } else if (res.length == 0) {
-          User.create({
-            nickname: profile.name.givenName,
-            password: profile.emails[0].value,
-            email: profile.emails[0].value
-          }, function (err, res) {
-            if (err) return cb(null, err);
-            return cb(null, res[0]);
-          })
-        } else {
-            return cb(null, res[0]);
-        }
 
-      })
-      // console.log(accessToken);
-      // console.log(profile);
-      // return cb(null, profile);
-    }));
-
+// passport.use(new Strategy({
+//       clientID: '1672424163009212',
+//       clientSecret: 'ded402cf08aa3e899ea573311a0e6c69',
+//       callbackURL: '/login/facebook/return',
+//       profileFields: ['id', 'emails', 'name']
+//     },
+//     function(accessToken, refreshToken, profile, cb) {
+//       // console.log(profile);
+//         var User = app.models.user;
+//         User.find({"email": profile.emails[0].value}, function (err, res) {
+//         if (err) {
+//             return cb(null, err);
+//         } else if (res.length == 0) {
+//           User.create({
+//             nickname: profile.name.givenName,
+//             password: profile.emails[0].value,
+//             email: profile.emails[0].value
+//           }, function (err, res) {
+//             if (err) return cb(null, err);
+//             return cb(null, res[0]);
+//           })
+//         } else {
+//             return cb(null, res[0]);
+//         }
+//
+//       })
+//       // console.log(accessToken);
+//       // console.log(profile);
+//       // return cb(null, profile);
+//     }));
+//
 
 passport.serializeUser(function(user, cb) {
   // console.log(user);
@@ -79,6 +80,8 @@ app.use(passport.session());
 //       res.render('login');
 //     });
 //
+
+
 app.get('/login/facebook',
     passport.authenticate('facebook'));
 
