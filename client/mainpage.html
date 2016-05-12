@@ -182,6 +182,14 @@
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>
 
+    var data_global;
+     $("#message2 label.btn").on("click", function () {
+        var type = $(this).attr('id');
+         console.log(type);
+         render(type);
+        
+    });
+    
     function renderList(data) {
         console.log(data);
         var selection = d3.select("#acti-List").selectAll("li")
@@ -208,18 +216,20 @@
         selection.exit().remove();
     }
 
-    function render(data) {
-//        var filteredData = data.filter(function(d) {
-//            return d.description;
+    
+    function render(type) {
+        var filteredData = data_global.filter(function(d) {
+            if(d.type == type)
+            return d;
 //            console.log(data.description);
-//        });
+        });
 
-        renderList(Data);
+        renderList(filteredData);
     }
 
     d3.json('/api/activities/findByCoordinates?lat=40.75&lng=-73.98', function (error, data) {
-        data = data.activities;
-        renderList(data);
+        data_global = data.activities;
+        renderList(data_global);
     })
 </script>
 
