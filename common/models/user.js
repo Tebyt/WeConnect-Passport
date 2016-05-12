@@ -5,7 +5,8 @@ module.exports = function(User) {
         context.res.redirect('/register.html')
     });
     User.afterRemote('login', function(context, userInstance, next) {
-        context.res.redirect('/');
+        console.log(context.req.accessToken);
+        context.res.redirect('/explorer');
     })
 };
 
