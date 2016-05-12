@@ -68,17 +68,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// Define routes.
-app.get('/',
-    function(req, res) {
-      res.render('home', { user: req.user });
-    });
-
-app.get('/login',
-    function(req, res){
-      res.render('login');
-    });
-
+// // Define routes.
+// app.get('/',
+//     function(req, res) {
+//       res.render('home', { user: req.user });
+//     });
+//
+// app.get('/login',
+//     function(req, res){
+//       res.render('login');
+//     });
+//
 app.get('/login/facebook',
     passport.authenticate('facebook'));
 
@@ -96,13 +96,13 @@ app.get('/login/facebook/return',
         // req.accessToken = req.user;
         // req.user
     });
-
-app.get('/profile',
-    require('connect-ensure-login').ensureLoggedIn(),
-    function(req, res){
-      res.render('profile', { user: req.user });
-    });
-
+//
+// app.get('/profile',
+//     require('connect-ensure-login').ensureLoggedIn(),
+//     function(req, res){
+//       res.render('profile', { user: req.user });
+//     });
+//
 
 
 app.start = function() {
