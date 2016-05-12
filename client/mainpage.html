@@ -142,6 +142,11 @@
         </div>
     </div>
     
+    <div class="container">
+        <ul class="acti-List" id="acti-List"> </ul>
+    
+    
+    </div>
     
     <div class="row">
         <nav class="navbar navbar-inverse navbar-fixed-bottom" id="bottom">
@@ -162,8 +167,36 @@
     </nav>
 </div>
 </body>
+    
 
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+        var data = [];
+        var list = d3.select("#acti-List");
+        
+        function renderList(data) {
+        var selection = list.selectAll("li")
+            .data(data, function(d) {return d.description});
+            selection.enter()
+            .append("li")
+            .attr("class", "listItem")
+            .text(function(d) {return d.description });
 
+        selection.exit().remove();
+    } 
+        
+        function render(data) {
+        var filteredData = data;
+            
+        renderList(filteredData);
+    }
+   
+    d3.json("/client/activities.json", function (error, result) {
+        data = result;
+        render(result);
+    })
+    
+    </script>
 
 
 </html>
