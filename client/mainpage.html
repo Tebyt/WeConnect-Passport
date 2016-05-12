@@ -190,7 +190,7 @@
     var data_global;
      $("#message2 label.btn").on("click", function () {
         var type = $(this).attr('id');
-         console.log(type);
+    
          render(type);
         
     });
@@ -199,7 +199,7 @@
         console.log(data);
         var selection = d3.select("#acti-List").selectAll("li")
             .data(data, function (d) {
-                console.log(d);
+               
                 return d.description
             });
         selection.enter()
@@ -212,8 +212,11 @@
                 return ' <div class="row" ><div class="col-xs-3"><img src='+img_url+' class="img-circle" height="55" width="55" alt="Avatar"><p>' +d.type+ '</p></div> <div class="col-xs-7"><span> '+ d.description+ '</span></div></div> '    
     
             })
+            .on("click", function click(d) {
+                     console.log(d.id);
+                });
         
-         
+
 //            .text(function(d) {
 //            return d.description;
 //        });
