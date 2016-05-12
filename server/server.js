@@ -8,7 +8,6 @@ var Strategy = require('passport-local').Strategy;
 
 app.use(loopback.token({model: app.models.accessToken}));
 
-
 // passport.use(new Strategy({
 //       clientID: '1672424163009212',
 //       clientSecret: 'ded402cf08aa3e899ea573311a0e6c69',
@@ -84,6 +83,12 @@ app.use(passport.session());
 
 app.get('/login/facebook',
     passport.authenticate('facebook'));
+
+app.get('/logout', function(req, res) {
+  req.session.destroy(function (err) {
+    res.redirect('/')
+  })
+})
 
 app.get('/login/facebook/return',
     passport.authenticate('facebook', { failureRedirect: '/login' }),
